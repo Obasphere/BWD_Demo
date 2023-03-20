@@ -15,6 +15,12 @@ namespace BWD_Demo
             int mariam = 8;
             var precious = 9;
             string faith = "abiodun";
+
+            // convert string to Int, and used for arithmetic operation
+            string Agatha = "20";
+            int Abiola = 40;
+            int Uche = Convert.ToInt16(Agatha);            
+            Console.WriteLine($"The Number Jackline is {Uche + Abiola}");
             DateTime Dami = DateTime.UtcNow;
             DateTime faridah = DateTime.Now;
             if (Dami >= faridah)
