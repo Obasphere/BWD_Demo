@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -21,6 +22,39 @@ namespace BWD_Demo
             int Abiola = 40;
             int Uche = Convert.ToInt16(Agatha);            
             Console.WriteLine($"The Number Jackline is {Uche + Abiola}");
+
+            // converting data types
+            string d0 = "2023-04-17";
+            DateTime d1 = Convert.ToDateTime(d0);
+            DateTime d2 = DateTime.UtcNow.Date;
+            if (d1 > d2)
+            {
+                Console.WriteLine("Date of Birth : {0} must be earlier", d1);
+            }
+
+            string dateString = "255/07/1876";
+            DateTime dateOut;
+            if ((DateTime.TryParseExact(dateString, "dd/MM/yyyy",
+                              new CultureInfo("en-US"),
+                              DateTimeStyles.None,
+                              out dateOut)))
+                Console.WriteLine("Date is valid: {0}", dateOut.ToString());
+            else
+                Console.WriteLine("Date string {0} is invalid.", dateString);
+
+
+
+            string dateString2 = "25/07/1897";
+            DateTime dateOut2;
+            if ((DateTime.TryParseExact(dateString, "dd/MM/yyyy",
+                              new CultureInfo("en-US"),
+                              DateTimeStyles.None,
+                              out dateOut2)))
+                Console.WriteLine("Date is valid: {0}", dateOut2.ToString());
+            else
+                Console.WriteLine("Date string {0} is invalid.", dateString2);
+
+
             DateTime Dami = DateTime.UtcNow;
             DateTime faridah = DateTime.Now;
             if (Dami >= faridah)
